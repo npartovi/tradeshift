@@ -6,9 +6,9 @@ class App extends Component {
     super(props)
 
     this.state = {
-      side1: null,
-      side2: null,
-      side3: null
+      side1: "",
+      side2: "",
+      side3: "",
     }
   }
 
@@ -20,27 +20,59 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    
   }
 
   submitEnabled = (side1, side2, side3) => {
+
     return [side1,side2,side3].every((side) => !isNaN(side) && side > 0)
+  }
+
+  renderErrors = (side) => {
+    let errors = []
+    let renderError
+
+    if(side === ""){
+      return
+    }
+    if(isNaN(side)){
+      errors.push("Must Enter In a Numeric Value")
+    }
+    
+    if(side <= 0){
+      errors.push("Must enter a Value Greater Than 0")
+    }
+
+    if(errors.length !== 0){
+      renderError = errors.map((error, idx) => (
+        <p key={idx}>{error}</p>
+      ))
+    }
+
+    return renderError
   }
 
   render() {
 
     const {side1, side2, side3} = this.state
     const isEnabled = this.submitEnabled(side1,side2,side3)
+    const side1Error = this.renderErrors(side1)
+    const side2Error = this.renderErrors(side2)
+    const side3Error = this.renderErrors(side3)
+
 
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
           <label>side1</label>
-            <input maxLength={1} onChange={this.onChange("side1")} type="text" />
+            <input onChange={this.onChange("side1")} type="text" />
+            {side1Error}
           <label>side2</label>
-            <input maxLength={1} onChange={this.onChange("side2")} type="text" />
+            <input onChange={this.onChange("side2")} type="text" />
+            {side2Error}
           <label>side3</label>
-            <input maxLength={1} onChange={this.onChange("side3")} type="text" />
+            <input onChange={this.onChange("side3")} type="text" />
+            {side3Error}
           <button disabled={!isEnabled} type="submit">Submit</button>
         </form>
       </div>
