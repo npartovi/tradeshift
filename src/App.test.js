@@ -21,8 +21,17 @@ describe('input check', () => {
    })
 })
 
-
 describe('determine type of triangle', () => {
+
+  it('it returns "Impossible" if triangle lengths dont make a triangle', () => {
+    let side1 = 40
+    let side2 = 1
+    let side3 = 1
+
+    const results = validateSides(side1, side2, side3)
+    expect(results).toEqual("Impossible")
+  })
+
   it('it returns "Equilateral" triangle', () => {
     let side1 = 3
     let side2 = 3

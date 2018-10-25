@@ -82,7 +82,14 @@ class App extends Component {
           </button>
         </div>
         <div className="results-container">
-          <h1>{results}</h1>
+          {results ? (
+            <div class="full header txt-red">
+            <div class="header-title">
+              <h2>Type Of Triangle</h2>
+              <h1>{results}</h1>
+            </div>
+            </div>
+          ): ""}
         </div>
       </div>
     );
