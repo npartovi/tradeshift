@@ -61,19 +61,19 @@ class App extends Component {
           <div className="input-item">
             <h3>Side 1</h3>
             <input onChange={this.onChange("side1")} type="text" />
-            <span>{side1Error}</span>
+            <span className="error-display">{side1Error}</span>
           </div>
 
           <div className="input-item">
             <h3>Side 2</h3>
             <input onChange={this.onChange("side2")} type="text" />
-            <span>{side2Error}</span>
+            <span className="error-display">{side2Error}</span>
           </div>
 
           <div className="input-item">
             <h3>Side 3</h3>
             <input onChange={this.onChange("side3")} type="text" />
-            <span>{side3Error}</span>
+            <span style={side3Error ? {display:"block"} : {display:"hidden"}} className="error-display">{side3Error}</span>
           </div>
         </div>
         <div className="button-container">

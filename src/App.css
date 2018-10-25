@@ -28,7 +28,31 @@ body {
   justify-content: center;
 }
 
+.button-container button {
+  background: linear-gradient(135deg, #f7d088 0%, #e866df 100%);
+  height: 50px;
+  width: 170px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 22px;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+
+
 .results-container {
   display: flex;
   justify-content: center;
+}
+
+.error-display{
+  color:red;
+  font-size: 12px;
 }
