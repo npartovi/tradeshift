@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {inputCheck, validateSides} from './util/validation'
 import './App.css';
 
 class App extends Component {
@@ -23,16 +24,9 @@ class App extends Component {
   // Calculates the type of triangle on submit and sets the results in the component state to be rendered on the Dom
   handleSubmit = (e) => {
     e.preventDefault()
-    const {side1, side2, side3 } = this.state
-    let results
 
-    if(side1 !== side2 && side2 !== side3 & side3 !== side1){
-      results = "Scalene"
-    }else if(side1 === side2 && side2 === side3 && side3 === side1){
-      results = "Equilateral"
-    }else{
-      results = "Isoceles"
-    }
+    const {side1, side2, side3 } = this.state
+    let results = validateSides(side1,side2,side3)
 
     this.setState({results: results})
   }
@@ -42,19 +36,11 @@ class App extends Component {
     return [side1,side2,side3].every((side) => !isNaN(side) && side > 0)
   }
 
-  // renders errors based on user input and returns a html elment to be rendered on the Dom
+  // renders errors based on user input and returns a html element to be rendered on the Dom.
   renderErrors = (side) => {
-    let errors = []
+    let errors = inputCheck(side)
     let renderError
-
-    if(side === ""){
-      return
-    } else if(isNaN(side)){
-      errors.push("Must Enter In a Numeric Value")
-    } else if(side <= 0){
-      errors.push("Must enter a Value Greater Than 0")
-    }
-
+    
     if(errors.length !== 0){
       renderError = errors.map((error, idx) => (
         <p key={idx}>{error}</p>
