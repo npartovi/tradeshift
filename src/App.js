@@ -24,7 +24,11 @@ class App extends Component {
   // Calculates the type of triangle on submit and sets the results in the component state to be rendered on the Dom
   handleSubmit = () => {
     const { side1, side2, side3 } = this.state;
-    let results = validateSides(parseFloat(side1), parseFloat(side2), parseFloat(side3));
+    let results = validateSides(
+      parseFloat(side1),
+      parseFloat(side2),
+      parseFloat(side3)
+    );
 
     this.setState({ results: results });
   };
@@ -73,21 +77,26 @@ class App extends Component {
           <div className="input-item">
             <h3>Side 3</h3>
             <input onChange={this.onChange("side3")} type="text" />
-            <span style={side3Error ? {display:"block"} : {display:"hidden"}} className="error-display">{side3Error}</span>
+            <span
+              style={side3Error ? { display: "block" } : { display: "hidden" }}
+              className="error-display"
+            >
+              {side3Error}
+            </span>
           </div>
         </div>
         <div className="button-container">
-        <button disabled={!isEnabled} onClick={this.handleSubmit}>
+          <button disabled={!isEnabled} onClick={this.handleSubmit}>
             Submit
           </button>
         </div>
         <div className="results-container">
-            <div class="full header txt-red">
-            <div class="header-title">
+          <div className="full header">
+            <div className="header-title">
               <h2>Type of Triangle</h2>
               <h1>{results}</h1>
             </div>
-            </div>
+          </div>
         </div>
       </div>
     );

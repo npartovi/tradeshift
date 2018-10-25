@@ -1,3 +1,5 @@
+
+// Check to see if input is a numerical value and is greater than 0
 export const inputCheck = (side) => {
     const errors = []
 
@@ -12,6 +14,7 @@ export const inputCheck = (side) => {
     return errors
 }
 
+// Check to see what type of triangle based on sides passed as arguments
 export const validateSides = (side1, side2, side3) => {
     let results
     
