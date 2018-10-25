@@ -12,12 +12,12 @@ it('renders without crashing', () => {
 describe('input check', () => {
    it("errors when number is less than zero", () => {
     const error1 = inputCheck(0)
-    expect(error1).toEqual(["Must enter a Value Greater Than 0"])
+    expect(error1).toEqual(["Must Enter A Value Greater Than 0"])
    })
 
    it("errors when no numeric value is inputted", () => {
     const error2 = inputCheck("a")
-    expect(error2).toEqual(["Must Enter In a Numeric Value"])
+    expect(error2).toEqual(["Must Enter In A Numeric Value"])
    })
 })
 
