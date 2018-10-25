@@ -9,6 +9,7 @@ class App extends Component {
       side1: "",
       side2: "",
       side3: "",
+      results: ""
     }
   }
 
@@ -20,7 +21,19 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    
+    const {side1, side2, side3 } = this.state
+    let results
+
+    if(side1 !== side2 && side2 !== side3 & side3 !== side1){
+      results = "Scalene"
+    }else if(side1 === side2 && side2 === side3 && side3 === side1){
+      results = "Equilateral"
+    }else{
+      results = "Isoceles"
+    }
+
+    this.setState({results: results})
+
   }
 
   submitEnabled = (side1, side2, side3) => {
@@ -35,6 +48,7 @@ class App extends Component {
     if(side === ""){
       return
     }
+    
     if(isNaN(side)){
       errors.push("Must Enter In a Numeric Value")
     }
@@ -60,7 +74,8 @@ class App extends Component {
     const side2Error = this.renderErrors(side2)
     const side3Error = this.renderErrors(side3)
 
-
+    console.log(this.state.results)
+  
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
