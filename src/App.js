@@ -41,13 +41,7 @@ class App extends Component {
   // renders errors based on user input and returns a html element to be rendered on the Dom.
   renderErrors = side => {
     let errors = inputCheck(side);
-    let renderError;
-
-    if (errors.length !== 0) {
-      renderError = errors.map((error, idx) => <p key={idx}>{error}</p>);
-    }
-
-    return renderError;
+    return errors.map((error, idx) => <p key={idx}>{error}</p>);
   };
 
   render() {
