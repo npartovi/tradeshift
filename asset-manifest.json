@@ -1,13 +1,13 @@
 {
   "main.css": "/tradeshift/static/css/main.a8894b68.chunk.css",
-  "main.js": "/tradeshift/static/js/main.2238189d.chunk.js",
-  "main.js.map": "/tradeshift/static/js/main.2238189d.chunk.js.map",
+  "main.js": "/tradeshift/static/js/main.078294c9.chunk.js",
+  "main.js.map": "/tradeshift/static/js/main.078294c9.chunk.js.map",
   "static/js/1.eeb96a50.chunk.js": "/tradeshift/static/js/1.eeb96a50.chunk.js",
   "static/js/1.eeb96a50.chunk.js.map": "/tradeshift/static/js/1.eeb96a50.chunk.js.map",
   "runtime~main.js": "/tradeshift/static/js/runtime~main.3e03b9cc.js",
   "runtime~main.js.map": "/tradeshift/static/js/runtime~main.3e03b9cc.js.map",
   "static/css/main.a8894b68.chunk.css.map": "/tradeshift/static/css/main.a8894b68.chunk.css.map",
   "index.html": "/tradeshift/index.html",
-  "precache-manifest.72b653fbe52c21ba1f35023bc7e701a9.js": "/tradeshift/precache-manifest.72b653fbe52c21ba1f35023bc7e701a9.js",
+  "precache-manifest.494a3bde19e25ebdd60296f0fe8dbabd.js": "/tradeshift/precache-manifest.494a3bde19e25ebdd60296f0fe8dbabd.js",
   "service-worker.js": "/tradeshift/service-worker.js"
 }

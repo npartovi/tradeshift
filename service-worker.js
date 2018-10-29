@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tradeshift/precache-manifest.72b653fbe52c21ba1f35023bc7e701a9.js"
+  "/tradeshift/precache-manifest.494a3bde19e25ebdd60296f0fe8dbabd.js"
 );
 
 workbox.clientsClaim();
