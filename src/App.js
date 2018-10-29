@@ -51,8 +51,6 @@ class App extends Component {
     const side2Error = this.renderErrors(side2);
     const side3Error = this.renderErrors(side3);
 
-    console.log(this.state.results);
-
     return (
       <div className="App">
         <div className="input-container">
